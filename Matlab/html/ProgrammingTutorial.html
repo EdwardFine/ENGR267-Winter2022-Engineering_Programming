@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Introduction to Programming</title><meta name="generator" content="MATLAB 9.13"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2023-01-24"><meta name="DC.source" content="ProgrammingTutorial.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Introduction to Programming</h1><!--introduction--><p>by Edward Fine</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Common Elements to High-Level Programming Languages</a></li><li><a href="#2">Variables</a></li><li><a href="#3">Input/Output</a></li><li><a href="#4">Mathematical &amp; Logical Operators</a></li><li><a href="#5">Conditional Execution</a></li><li><a href="#6">Repetition / Iteration</a></li><li><a href="#7">User-Defined Function</a></li></ul></div><h2 id="1">Common Elements to High-Level Programming Languages</h2><p>High-level: with abstraction higher than assambly</p><div><ul><li>Variables, Data Types, Data Structures</li><li>Input/Output (Get data from keyboard, file, device: output to screen)</li><li>Mathematical &amp; Logical Operators</li><li>Condictional Execution (if..elseif...elseif...else)</li><li>Repetition (Iteration) / Loops(For or while)</li><li>Functional Programming</li><li>Objects</li><li>Native and Specialized Libraries(Toolboxes)</li><li>GUIs</li></ul></div><h2 id="2">Variables</h2><p>A variable is a storage location paired with an associated symbolic name (identifier) that contains some quantity of information (value) referred to as a value.</p><p>Variables are used to store information to be referenced and manipulated in a computer program. They provied a method of labeling data with descriptive name (identifier).</p><p>It is helpful to think of a variable as a conatiner in a program that holds information, that is, a container in which a data value can be stored inside the computer's memory. Their purpose is to label and store data in memory. This data can then be used in a program and the stored value can be referenced using the variables's name.</p><p>Variable Concepts</p><div><ul><li>Creating Variables</li><li>Data Types (e.g., single, double, char, logical)</li><li>Data Structure (e.g, scalars, chars, 1D/2D arrays, vector, matrix)</li><li>MATLAB constants (e.g,, pi, inf, i, j)</li><li>Built-In functions(Matlab) to work with variables (who, whos, clear)</li></ul></div><pre class="codeinput">clc
+
+<span class="comment">% Scalar</span>
+a1 =4
+
+<span class="comment">% 1D Array = Vector</span>
+a2 = [1 2 3 4 5]
+
+<span class="comment">% Character</span>
+a3 = <span class="string">'a'</span>
+
+<span class="comment">% Vector using Colon : operator</span>
+a4 = 1:5
+
+<span class="comment">% Transpose</span>
+a5 = a4'
+
+<span class="comment">% String (Vector 1D, 1 Row Matrix)</span>
+a6 = <span class="string">'Edward'</span>
+
+<span class="comment">% Accessing Elements</span>
+a7 = a6(2)
+a8 = a6(1:3)
+
+<span class="comment">% Creating a Matrix</span>
+a9 = [1 2 3; 4 5 6; 8 9 10]
+
+<span class="comment">% Accessing Elements in Matrix</span>
+a10 = a9(1:2, end)
+
+<span class="comment">% Constants</span>
+a11 = pi
+a12 = j
+a13 = NaN
+a14 = inf
+
+<span class="comment">% Data Types, Conversion of Data Tpes</span>
+a15 = single(a1)
+
+<span class="comment">% Special Variables &amp; Functions</span>
+a16 = []
+a17 = zeros(4,4)
+a18 = ones(4, 4)
+a19 = diag(1:4)
+
+<span class="comment">%Replace Variables, Segements of Variables</span>
+a20 = a19;
+a20(end, :) = ones(1,4)
+a20(:,end) = 1:4
+a20(2:3, 2:3) = [1,2;3,4]
+
+<span class="comment">%Special Functions to Work with Variables</span>
+length(a2)
+size(a2)
+who
+whos
+<span class="comment">% clear</span>
+</pre><pre class="codeoutput">
+a1 =
+
+     4
+
+
+a2 =
+
+     1     2     3     4     5
+
+
+a3 =
+
+    'a'
+
+
+a4 =
+
+     1     2     3     4     5
+
+
+a5 =
+
+     1
+     2
+     3
+     4
+     5
+
+
+a6 =
+
+    'Edward'
+
+
+a7 =
+
+    'd'
+
+
+a8 =
+
+    'Edw'
+
+
+a9 =
+
+     1     2     3
+     4     5     6
+     8     9    10
+
+
+a10 =
+
+     3
+     6
+
+
+a11 =
+
+    3.1416
+
+
+a12 =
+
+   0.0000 + 1.0000i
+
+
+a13 =
+
+   NaN
+
+
+a14 =
+
+   Inf
+
+
+a15 =
+
+  single
+
+     4
+
+
+a16 =
+
+     []
+
+
+a17 =
+
+     0     0     0     0
+     0     0     0     0
+     0     0     0     0
+     0     0     0     0
+
+
+a18 =
+
+     1     1     1     1
+     1     1     1     1
+     1     1     1     1
+     1     1     1     1
+
+
+a19 =
+
+     1     0     0     0
+     0     2     0     0
+     0     0     3     0
+     0     0     0     4
+
+
+a20 =
+
+     1     0     0     0
+     0     2     0     0
+     0     0     3     0
+     1     1     1     1
+
+
+a20 =
+
+     1     0     0     1
+     0     2     0     2
+     0     0     3     3
+     1     1     1     4
+
+
+a20 =
+
+     1     0     0     1
+     0     1     2     2
+     0     3     4     3
+     1     1     1     4
+
+
+ans =
+
+     5
+
+
+ans =
+
+     1     5
+
+
+Your variables are:
+
+Fs     a11    a15    a19    a4     a8     fid    x      x_r4   ys     z_or   
+a      a12    a16    a2     a5     a9     k      x_r1   x_r5   z      
+a1     a13    a17    a20    a6     ans    k1     x_r2   x_r6   z_and  
+a10    a14    a18    a3     a7     b      name   x_r3   y      z_not  
+
+  Name       Size            Bytes  Class      Attributes
+
+  Fs         1x1                 8  double               
+  a          1x1                 8  double               
+  a1         1x1                 8  double               
+  a10        2x1                16  double               
+  a11        1x1                 8  double               
+  a12        1x1                16  double     complex   
+  a13        1x1                 8  double               
+  a14        1x1                 8  double               
+  a15        1x1                 4  single               
+  a16        0x0                 0  double               
+  a17        4x4               128  double               
+  a18        4x4               128  double               
+  a19        4x4               128  double               
+  a2         1x5                40  double               
+  a20        4x4               128  double               
+  a3         1x1                 2  char                 
+  a4         1x5                40  double               
+  a5         5x1                40  double               
+  a6         1x6                12  char                 
+  a7         1x1                 2  char                 
+  a8         1x3                 6  char                 
+  a9         3x3                72  double               
+  ans        1x2                16  double               
+  b          1x1                 8  double               
+  fid        1x1                 8  double               
+  k          1x1                 8  double               
+  k1         1x1                 8  double               
+  name       1x6                12  char                 
+  x          1x16              128  double               
+  x_r1       1x5                 5  logical              
+  x_r2       1x5                 5  logical              
+  x_r3       1x5                 5  logical              
+  x_r4       1x5                 5  logical              
+  x_r5       1x5                 5  logical              
+  x_r6       1x5                 5  logical              
+  y          1x16              128  double               
+  ys         1x1                 8  double               
+  z          1x1                 8  double               
+  z_and      1x4                 4  logical              
+  z_not      1x4                 4  logical              
+  z_or       1x4                 4  logical              
+
+</pre><h2 id="3">Input/Output</h2><p>Input from keyboard, file device &amp; Output to screen, file, or device</p><p>Kye Functions and Concepts</p><div><ul><li>Input</li><li>Disp</li><li>fprintf, fopen, fclose</li><li>format</li><li>load</li><li>save</li></ul></div><pre class="codeinput"><span class="comment">% Input</span>
+x=5;
+y=6.6;
+name = <span class="string">'Edward'</span>;
+<span class="comment">% x = input('Enter the value of X: ');</span>
+<span class="comment">% y = input('Enter the value of Y: ');</span>
+<span class="comment">% name = input('Enter your name ', 's');</span>
+z = x+y;
+
+<span class="comment">% Simple Screen Output</span>
+disp(<span class="string">'The Sume of the variables is: '</span>)
+z
+
+disp([<span class="string">'The sum of the variables is :'</span>, num2str(z)])
+
+<span class="comment">% Output to Screen (More powerful than disp)</span>
+fprintf(<span class="string">'The sum of the variable is %g %s \n'</span>, z, name)
+
+<span class="comment">% Output to File</span>
+fid = fopen(<span class="string">'myResults.txt'</span>, <span class="string">'w'</span>);
+fprintf(fid, <span class="string">'The sum of the variable is %g %s \n'</span>, z, name)
+fclose(fid);
+
+<span class="comment">% Format</span>
+format <span class="string">short</span> <span class="comment">% 7 digits</span>
+format <span class="string">long</span> <span class="comment">% 15 digits</span>
+format <span class="string">bank</span> <span class="comment">% xx.xx format</span>
+format <span class="string">short</span> <span class="string">e</span> <span class="comment">% 4 digit scientific notation</span>
+format <span class="string">short</span>
+
+<span class="comment">% Read Data from File</span>
+load <span class="string">handel</span>
+save(<span class="string">'myData'</span>, <span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>)
+</pre><pre class="codeoutput">The Sume of the variables is: 
+
+z =
+
+   11.6000
+
+The sum of the variables is :11.6
+The sum of the variable is 11.6 Edward 
+
+ans =
+
+    40
+
+</pre><h2 id="4">Mathematical &amp; Logical Operators</h2><p>High-level programming languages (&gt;assambly) all contaim operators: assignment operatorrs, arithmetic operators, relational operators (comparison, and logical operators.</p><pre class="codeinput"><span class="comment">% Arithmetic Scalar</span>
+a1=5+5
+a2 = 5-5
+a3 = 5*5
+a4 = 5/5
+
+<span class="comment">% Arithmetic Vector (Element-by-Element)</span>
+
+a6 = 1:5
+a7 = 1:5
+a8 = a6+a7
+a9 = a6-a7
+a10 = a6.*a7
+a11 = a6./a7
+a12 = a6.^a7
+
+<span class="comment">% Arithmetic Matrix</span>
+a13 = a6*a7'
+a14 = a6'*a7
+a15 = ones(3,3)*ones(3,3)
+
+<span class="comment">% Relational (Comparison) Operators</span>
+a = rand(1,5)
+b = rand(1,5)
+
+x_r1 = a &lt; b
+x_r2 = a &gt; b
+x_r3 = a &lt;= b
+x_r4 = a &gt;= b
+x_r5 = a == b
+x_r6 = a ~= b
+
+<span class="comment">% Logical Operators</span>
+
+a = [0 1 0 1]
+b = [1 0 1 1]
+
+z_and = a &amp; b
+z_or = a | b
+z_not = ~a
+</pre><pre class="codeoutput">
+a1 =
+
+    10
+
+
+a2 =
+
+     0
+
+
+a3 =
+
+    25
+
+
+a4 =
+
+     1
+
+
+a6 =
+
+     1     2     3     4     5
+
+
+a7 =
+
+     1     2     3     4     5
+
+
+a8 =
+
+     2     4     6     8    10
+
+
+a9 =
+
+     0     0     0     0     0
+
+
+a10 =
+
+     1     4     9    16    25
+
+
+a11 =
+
+     1     1     1     1     1
+
+
+a12 =
+
+           1           4          27         256        3125
+
+
+a13 =
+
+    55
+
+
+a14 =
+
+     1     2     3     4     5
+     2     4     6     8    10
+     3     6     9    12    15
+     4     8    12    16    20
+     5    10    15    20    25
+
+
+a15 =
+
+     3     3     3
+     3     3     3
+     3     3     3
+
+
+a =
+
+    0.5528    0.0942    0.0214    0.1167    0.1375
+
+
+b =
+
+    0.0380    0.4199    0.2708    0.2515    0.8530
+
+
+x_r1 =
+
+  1&times;5 logical array
+
+   0   1   1   1   1
+
+
+x_r2 =
+
+  1&times;5 logical array
+
+   1   0   0   0   0
+
+
+x_r3 =
+
+  1&times;5 logical array
+
+   0   1   1   1   1
+
+
+x_r4 =
+
+  1&times;5 logical array
+
+   1   0   0   0   0
+
+
+x_r5 =
+
+  1&times;5 logical array
+
+   0   0   0   0   0
+
+
+x_r6 =
+
+  1&times;5 logical array
+
+   1   1   1   1   1
+
+
+a =
+
+     0     1     0     1
+
+
+b =
+
+     1     0     1     1
+
+
+z_and =
+
+  1&times;4 logical array
+
+   0   0   0   1
+
+
+z_or =
+
+  1&times;4 logical array
+
+   1   1   1   1
+
+
+z_not =
+
+  1&times;4 logical array
+
+   1   0   1   0
+
+</pre><h2 id="5">Conditional Execution</h2><p>Relational &amp; logical operators are combined with an "if...else..." structure to selectively execute blocks of code by performing a basic conditional test that evaluated a given expression for a boolean value of true (1) or false (0)</p><pre class="codeinput"><span class="comment">% if statement</span>
+
+<span class="keyword">if</span> 5&gt;1
+    disp(<span class="string">'Yest, 5 is greater than 1'</span>)
+    disp(<span class="string">'Thanks for asking'</span>)
+<span class="keyword">end</span>
+
+<span class="comment">% If... else... statement</span>
+
+a = rand;
+b = rand;
+<span class="keyword">if</span> a&lt;b
+    disp(<span class="string">'a is less than b'</span>)
+    a
+    b
+<span class="keyword">else</span>
+    disp(<span class="string">'a is greater than b'</span>)
+    a
+    b
+<span class="keyword">end</span>
+
+<span class="comment">% if...elseif...elseif...elseif...N....else</span>
+
+a = rand;
+b = rand;
+<span class="keyword">if</span> a&lt;b
+    disp(<span class="string">'a is less than b'</span>)
+    a
+    b
+<span class="keyword">elseif</span> a&gt;b
+    disp(<span class="string">'a is greater than b'</span>)
+    a
+    b
+<span class="keyword">elseif</span> a==b
+    disp(<span class="string">'a is qual to b'</span>)
+    a
+    b
+<span class="keyword">else</span>
+    disp(<span class="string">'Error'</span>)
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Yest, 5 is greater than 1
+Thanks for asking
+a is less than b
+
+a =
+
+    0.1784
+
+
+b =
+
+    0.3845
+
+a is greater than b
+
+a =
+
+    0.7949
+
+
+b =
+
+    0.6044
+
+</pre><h2 id="6">Repetition / Iteration</h2><p>Repeated evaluation of a block of code (a set of statements) is accomplished by using "for loops" and "while loops"</p><p>Key concepts</p><div><ul><li>For Loops (determined number of repetition)</li><li>While Loops (undetermined number of repetitions)</li><li>Vectorization (avoid loops by using factor vector operations)</li></ul></div><pre class="codeinput"><span class="comment">% For loop</span>
+
+fid = fopen(<span class="string">'myResults1.txt'</span>, <span class="string">'wt'</span>);
+<span class="keyword">for</span> k=1:10
+    disp(<span class="string">'Program entered the for loop'</span>);
+    fprintf(<span class="string">'For loop iteration %d \n'</span>, k);
+    fprintf(fid, <span class="string">'For loop iteration %d \n'</span>, k);
+<span class="keyword">end</span>
+fclose(fid);
+
+
+<span class="comment">% While loop</span>
+k=1;
+fid = fopen(<span class="string">'myResults2.txt'</span>, <span class="string">'wt'</span>);
+<span class="keyword">while</span> k&lt;=10
+    disp(<span class="string">'Program entered the for loop'</span>);
+    fprintf(<span class="string">'While loop iteration %d \n'</span>, k);
+    fprintf(fid, <span class="string">'While loop iteration %d \n'</span>, k);
+    k=k+1;
+<span class="keyword">end</span>
+fclose(fid);
+
+<span class="comment">% While loop with unknown no of iterations</span>
+<span class="comment">% k=1;</span>
+<span class="comment">% k1=1;</span>
+<span class="comment">% fid = fopen('myResults3.txt', 'wt');</span>
+<span class="comment">% while k1~= 0</span>
+<span class="comment">%     disp('Program entered the for loop');</span>
+<span class="comment">%     fprintf('While loop iteration %d \n', k);</span>
+<span class="comment">%     fprintf(fid, 'While loop iteration %d \n', k);</span>
+<span class="comment">%     k1 = input('Do you want to stop? (Enter 0 to Stop:) ');</span>
+<span class="comment">%</span>
+<span class="comment">%     k=k+1;</span>
+<span class="comment">% end</span>
+<span class="comment">% fclose(fid);</span>
+
+<span class="comment">% For loops with noninterger increments</span>
+y=zeros(1,16);
+k=1;
+<span class="keyword">for</span> x=0:pi/15:pi
+    y(k)=cos(x);
+    k=k+1;
+<span class="keyword">end</span>
+y
+
+<span class="comment">% Vectorization</span>
+x=0:pi/15:pi;
+y=cos(x)
+</pre><pre class="codeoutput">Program entered the for loop
+For loop iteration 1 
+Program entered the for loop
+For loop iteration 2 
+Program entered the for loop
+For loop iteration 3 
+Program entered the for loop
+For loop iteration 4 
+Program entered the for loop
+For loop iteration 5 
+Program entered the for loop
+For loop iteration 6 
+Program entered the for loop
+For loop iteration 7 
+Program entered the for loop
+For loop iteration 8 
+Program entered the for loop
+For loop iteration 9 
+Program entered the for loop
+For loop iteration 10 
+Program entered the for loop
+While loop iteration 1 
+Program entered the for loop
+While loop iteration 2 
+Program entered the for loop
+While loop iteration 3 
+Program entered the for loop
+While loop iteration 4 
+Program entered the for loop
+While loop iteration 5 
+Program entered the for loop
+While loop iteration 6 
+Program entered the for loop
+While loop iteration 7 
+Program entered the for loop
+While loop iteration 8 
+Program entered the for loop
+While loop iteration 9 
+Program entered the for loop
+While loop iteration 10 
+
+y =
+
+  Columns 1 through 7
+
+    1.0000    0.9781    0.9135    0.8090    0.6691    0.5000    0.3090
+
+  Columns 8 through 14
+
+    0.1045   -0.1045   -0.3090   -0.5000   -0.6691   -0.8090   -0.9135
+
+  Columns 15 through 16
+
+   -0.9781   -1.0000
+
+
+y =
+
+  Columns 1 through 7
+
+    1.0000    0.9781    0.9135    0.8090    0.6691    0.5000    0.3090
+
+  Columns 8 through 14
+
+    0.1045   -0.1045   -0.3090   -0.5000   -0.6691   -0.8090   -0.9135
+
+  Columns 15 through 16
+
+   -0.9781   -1.0000
+
+</pre><h2 id="7">User-Defined Function</h2><p>Functions are used to enclose a section of code that provides specific functionality to the program (subprograms). User-defined functions work just like built-in functions.</p><p>Advantages of using functions include:</p><div><ul><li>Addition specific functionality that can be re-used</li><li>Make the programs easier to understand andd maintain</li><li>Ability to divide the work of larger projects among programmers by  working on different functions with well defined interfaces.</li></ul></div><p>Key Concepts</p><div><ul><li>Declaration of User Define Functions *</li></ul></div><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2022b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Introduction to Programming
+% by Edward Fine
+%
+%% Common Elements to High-Level Programming Languages
+% High-level: with abstraction higher than assambly
+%
+% * Variables, Data Types, Data Structures
+% * Input/Output (Get data from keyboard, file, device: output to screen)
+% * Mathematical & Logical Operators
+% * Condictional Execution (if..elseif...elseif...else)
+% * Repetition (Iteration) / Loops(For or while)
+% * Functional Programming
+% * Objects
+% * Native and Specialized Libraries(Toolboxes)
+% * GUIs
+
+%% Variables
+% A variable is a storage location paired with an associated symbolic 
+% name (identifier) that contains some quantity of information (value)
+% referred to as a value.
+%
+% Variables are used to store information to be referenced and manipulated
+% in a computer program.
+% They provied a method of labeling data with descriptive name
+% (identifier).
+%
+% It is helpful to think of a variable as a conatiner in a program that 
+% holds information, that is, a container in which a data value can be
+% stored inside the computer's memory. Their purpose is to label and store
+% data in memory. This data can then be used in a program and the stored
+% value can be referenced using the variables's name.
+%
+% Variable Concepts
+% 
+% * Creating Variables
+% * Data Types (e.g., single, double, char, logical)
+% * Data Structure (e.g, scalars, chars, 1D/2D arrays, vector, matrix)
+% * MATLAB constants (e.g,, pi, inf, i, j)
+% * Built-In functions(Matlab) to work with variables (who, whos, clear)
+%
+clc
+
+% Scalar
+a1 =4
+
+% 1D Array = Vector
+a2 = [1 2 3 4 5]
+
+% Character
+a3 = 'a'
+
+% Vector using Colon : operator
+a4 = 1:5
+
+% Transpose
+a5 = a4'
+
+% String (Vector 1D, 1 Row Matrix)
+a6 = 'Edward'
+
+% Accessing Elements
+a7 = a6(2)
+a8 = a6(1:3)
+
+% Creating a Matrix
+a9 = [1 2 3; 4 5 6; 8 9 10]
+
+% Accessing Elements in Matrix
+a10 = a9(1:2, end)
+
+% Constants
+a11 = pi
+a12 = j
+a13 = NaN
+a14 = inf
+
+% Data Types, Conversion of Data Tpes
+a15 = single(a1)
+
+% Special Variables & Functions
+a16 = []
+a17 = zeros(4,4)
+a18 = ones(4, 4)
+a19 = diag(1:4)
+
+%Replace Variables, Segements of Variables
+a20 = a19;
+a20(end, :) = ones(1,4)
+a20(:,end) = 1:4
+a20(2:3, 2:3) = [1,2;3,4]
+
+%Special Functions to Work with Variables
+length(a2)
+size(a2)
+who
+whos
+% clear
+
+%% Input/Output
+% Input from keyboard, file device &
+% Output to screen, file, or device
+%
+% Kye Functions and Concepts
+%
+% * Input
+% * Disp
+% * fprintf, fopen, fclose
+% * format
+% * load
+% * save
+%
+
+% Input
+x=5;
+y=6.6;
+name = 'Edward';
+% x = input('Enter the value of X: ');
+% y = input('Enter the value of Y: ');
+% name = input('Enter your name ', 's');
+z = x+y;
+
+% Simple Screen Output
+disp('The Sume of the variables is: ')
+z
+
+disp(['The sum of the variables is :', num2str(z)])
+
+% Output to Screen (More powerful than disp)
+fprintf('The sum of the variable is %g %s \n', z, name)
+
+% Output to File
+fid = fopen('myResults.txt', 'w');
+fprintf(fid, 'The sum of the variable is %g %s \n', z, name)
+fclose(fid);
+
+% Format
+format short % 7 digits
+format long % 15 digits
+format bank % xx.xx format
+format short e % 4 digit scientific notation
+format short
+
+% Read Data from File
+load handel
+save('myData', 'x', 'y', 'z')
+
+%% Mathematical & Logical Operators
+% High-level programming languages (>assambly) all contaim operators:
+% assignment operatorrs, arithmetic operators, relational operators
+% (comparison, and logical operators.
+
+% Arithmetic Scalar
+a1=5+5
+a2 = 5-5
+a3 = 5*5
+a4 = 5/5
+
+% Arithmetic Vector (Element-by-Element)
+
+a6 = 1:5
+a7 = 1:5
+a8 = a6+a7
+a9 = a6-a7
+a10 = a6.*a7
+a11 = a6./a7
+a12 = a6.^a7
+
+% Arithmetic Matrix
+a13 = a6*a7'
+a14 = a6'*a7
+a15 = ones(3,3)*ones(3,3)
+
+% Relational (Comparison) Operators
+a = rand(1,5)
+b = rand(1,5)
+
+x_r1 = a < b
+x_r2 = a > b
+x_r3 = a <= b
+x_r4 = a >= b
+x_r5 = a == b
+x_r6 = a ~= b
+
+% Logical Operators
+
+a = [0 1 0 1]
+b = [1 0 1 1]
+
+z_and = a & b
+z_or = a | b
+z_not = ~a 
+
+%% Conditional Execution
+% Relational & logical operators are combined with an "if...else..."
+% structure to selectively execute blocks of code by performing a basic
+% conditional test that evaluated a given expression for a boolean value of
+% true (1) or false (0)
+
+% if statement
+
+if 5>1
+    disp('Yest, 5 is greater than 1')
+    disp('Thanks for asking')
+end
+
+% If... else... statement
+
+a = rand;
+b = rand; 
+if a<b
+    disp('a is less than b')
+    a
+    b
+else
+    disp('a is greater than b')
+    a
+    b
+end
+
+% if...elseif...elseif...elseif...N....else
+
+a = rand;
+b = rand; 
+if a<b
+    disp('a is less than b')
+    a
+    b
+elseif a>b
+    disp('a is greater than b')
+    a
+    b
+elseif a==b
+    disp('a is qual to b')
+    a
+    b
+else
+    disp('Error')
+end
+
+%% Repetition / Iteration
+% Repeated evaluation of a block of code (a set of statements) is
+% accomplished by using "for loops" and "while loops"
+%
+% Key concepts
+%
+% * For Loops (determined number of repetition)
+% * While Loops (undetermined number of repetitions)
+% * Vectorization (avoid loops by using factor vector operations)
+
+% For loop
+
+fid = fopen('myResults1.txt', 'wt');
+for k=1:10
+    disp('Program entered the for loop');
+    fprintf('For loop iteration %d \n', k);
+    fprintf(fid, 'For loop iteration %d \n', k);
+end
+fclose(fid);
+
+
+% While loop
+k=1;
+fid = fopen('myResults2.txt', 'wt');
+while k<=10
+    disp('Program entered the for loop');
+    fprintf('While loop iteration %d \n', k);
+    fprintf(fid, 'While loop iteration %d \n', k);
+    k=k+1;
+end
+fclose(fid);
+
+% While loop with unknown no of iterations
+% k=1;
+% k1=1;
+% fid = fopen('myResults3.txt', 'wt');
+% while k1~= 0
+%     disp('Program entered the for loop');
+%     fprintf('While loop iteration %d \n', k);
+%     fprintf(fid, 'While loop iteration %d \n', k);
+%     k1 = input('Do you want to stop? (Enter 0 to Stop:) ');
+%     
+%     k=k+1;
+% end
+% fclose(fid);
+
+% For loops with noninterger increments
+y=zeros(1,16);
+k=1;
+for x=0:pi/15:pi
+    y(k)=cos(x);
+    k=k+1;
+end
+y
+
+% Vectorization
+x=0:pi/15:pi;
+y=cos(x)
+
+
+%% User-Defined Function
+% Functions are used to enclose a section of code that provides specific
+% functionality to the program (subprograms). User-defined functions work
+% just like built-in functions.
+%
+% Advantages of using functions include:
+%
+% * Addition specific functionality that can be re-used
+% * Make the programs easier to understand andd maintain
+% * Ability to divide the work of larger projects among programmers by
+%  working on different functions with well defined interfaces.
+%
+% Key Concepts
+%
+% * Declaration of User Define Functions
+% *
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>
